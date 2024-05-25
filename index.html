@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Dom Javascript</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>Pendaftaran Peminatan</h3>
+        </div>
+        <form id="peminatanForm">
+            <div class="form-row">
+                <label for="nama" style="font-weight:bold;">Nama</label>
+                <input type="text" placeholder="Nama Anda" id="nama" required>
+            </div>
+            <div class="form-row">
+                <label for="nim" style="font-weight: bold;">NIM</label>
+                <input type="text" placeholder="NIM Anda" id="nim" required>
+            </div>
+            <div class="form-row">
+                <label style="font-weight: bold;">Peminatan</label>
+                <input type="radio" name="peminatan" id="programming" value="programming">
+                <label for="programming">Programming</label>
+                <input type="radio" name="peminatan" id="desain" value="desain">
+                <label for="desain">Desain</label>
+                <input type="radio" name="peminatan" id="jaringan" value="jaringan">
+                <label for="jaringan">Jaringan</label>
+                <input type="radio" name="peminatan" id="data" value="data">
+                <label for="data">Data</label>
+            </div>
+            <div class="form-row">
+                <label for="angkatan" style="font-weight: bold;">Angkatan</label>
+                <select name="angkatan" id="angkatan" style="height: 50px;">
+                    <option value="2022">2018</option>
+                    <option value="2022">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2022">2023</option>
+                    <option value="2022">2024</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="tanggal" style="font-weight:bold;">Tanggal</label>
+                <input type="text" id="tanggal" readonly>
+            </div>
+            <div class="form-row">
+                <label for="alamat" style="font-weight: bold;">Alamat</label>
+                <textarea placeholder="Tulis alamat Anda di sini" id="alamat" name="alamat" cols="30" rows="5"></textarea>
+            </div>
+            <button type="button" onclick="kirimdata()">Kirim</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#tanggal", {
+            dateFormat: "Y-m-d",
+            minDate: "today"
+        });
+
+        function kirimdata() {
+            const form = document.getElementById('peminatanForm');
+            const nama = document.getElementById('nama').value;
+            const nim = document.getElementById('nim').value;
+            const peminatan = form.querySelector('input[name="peminatan"]:checked').value;
+            const angkatan = document.getElementById('angkatan').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const alamat = document.getElementById('alamat').value;
+
+            const message = `Data yang Anda isi:\n
+            Nama: ${nama}\n
+            NIM: ${nim}\n
+            Peminatan: ${peminatan}\n
+            Angkatan: ${angkatan}\n
+            Tanggal: ${tanggal}\n
+            Alamat: ${alamat}`;
+
+            alert(message);
+        }
+    </script>
+</body>
+</html>

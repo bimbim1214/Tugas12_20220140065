@@ -1,0 +1,73 @@
+body {
+  font-family: 'Playfair Display', serif;
+  background-image: url('TI03.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ecf0f1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: rgba(44, 62, 80, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 1200px;
+}
+
+.header h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1abc9c;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+label {
+  width: 150px;
+  margin-right: 10px;
+}
+
+input[type="text"],
+textarea,
+select {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #1abc9c;
+  color: #ecf0f1;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+button:hover {
+  background: #16a085;
+}
